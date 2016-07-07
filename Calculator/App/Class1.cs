@@ -8,12 +8,12 @@ namespace App
 {
     public class CalculatorLogic
     {
-        public int inputA;
-        public int inputB;
+        public double inputA;
+        public double inputB;
         public string operation;
-        public int answer { get; set; }
+        public double answer { get; set; }
 
-        public void Calc(int a, int b, string operation)
+        public void Calc(double a, double b, string operation)
         {
             switch (operation)
             {

@@ -10,8 +10,8 @@ namespace Calculator
     class Program
     {
         
-        private static int inputA;
-        private static int inputB;
+        private static double inputA;
+        private static double inputB;
         private static string operation;
 
         public static void Main(string[] args)
@@ -26,7 +26,6 @@ namespace Calculator
         {
             try
             {
-
                 Console.WriteLine("Please enter in your first number.");
                 string hold = Console.ReadLine();
                 int value;
