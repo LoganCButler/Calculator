@@ -63,5 +63,47 @@ namespace UnitTest
             Assert.AreEqual(5, c.answer);
         }
 
+        [TestMethod]
+        public void integersInDoubleOut()
+        {
+            //Arrange 
+            int inputA = 13;
+            int inputB = 2;
+            string operation = "/";
+            //Act
+            CalculatorLogic c = new CalculatorLogic();
+            c.Calc(inputA, inputB, operation);
+            //Assert
+            Assert.AreEqual(6.5, c.answer);
+        }
+
+        [TestMethod]
+        public void doublesInIntegerOut()
+        {
+            //Arrange 
+            double inputA = 2.5;
+            double inputB = .5;
+            string operation = "/";
+            //Act
+            CalculatorLogic c = new CalculatorLogic();
+            c.Calc(inputA, inputB, operation);
+            //Assert
+            Assert.AreEqual(5, c.answer);
+        }
+
+        [TestMethod]
+        public void doublesInDoublesOut()
+        {
+            //Arrange 
+            double inputA = 5;
+            double inputB = .5;
+            string operation = "*";
+            //Act
+            CalculatorLogic c = new CalculatorLogic();
+            c.Calc(inputA, inputB, operation);
+            //Assert
+            Assert.AreEqual(2.5, c.answer);
+        }
+
     }
 }
