@@ -28,8 +28,8 @@ namespace Calculator
             {
                 Console.WriteLine("Please enter in your first number.");
                 string hold = Console.ReadLine();
-                int value;
-                if (int.TryParse(hold, out value))
+                double value;
+                if (double.TryParse(hold, out value))
                 {
                     inputA = value;
                 }
@@ -40,7 +40,7 @@ namespace Calculator
             }
             catch
             {
-                Console.WriteLine("Please enter only one integer right now.");
+                Console.WriteLine("Please enter only one number right now.");
                 GetFirstNumber();
             }
         }       
@@ -51,8 +51,8 @@ namespace Calculator
             {
                 Console.WriteLine("Please enter in your second number.");
                 string hold = Console.ReadLine();
-                int value;
-                if (int.TryParse(hold, out value))
+                double value;
+                if (double.TryParse(hold, out value))
                 {
                     inputB = value;
                 }
@@ -63,7 +63,7 @@ namespace Calculator
             }
             catch
             {
-                Console.WriteLine("Please enter only one integer right now.");
+                Console.WriteLine("Please enter only one number right now.");
                 GetSecondNumber();
             }
         }
