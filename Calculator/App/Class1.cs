@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace App
 {
-    public class Class1
+    public class CalculatorLogic
     {
+        
+        public int answer { get; set; }
+
+        public void CalcAdd(int a, int b)
+        {
+            answer = a + b; 
+        }
     }
 }
