@@ -16,10 +16,16 @@ namespace Calculator
 
         public static void Main(string[] args)
         {
+            string continueOn = "y";
+            do
+            {
                 GetFirstNumber();
                 GetOperation();
                 GetSecondNumber();
                 DoTheMath();
+                Console.WriteLine("Would you like to do another problem?\n y: yes, any key: no");
+                continueOn = Console.ReadLine();
+            } while (continueOn.Contains("y"));
         }
 
         private static void GetFirstNumber()
