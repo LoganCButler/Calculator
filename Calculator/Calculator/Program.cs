@@ -79,11 +79,11 @@ namespace Calculator
             try
             {
                 Console.WriteLine("Please enter in your operation");
-                string hold = Console.ReadLine();
+                char hold = Convert.ToChar( Console.ReadLine());
 
                 if (ValidOperatorCheck(hold))
                 {
-                    operation = hold;
+                    operation = Convert.ToString(hold);
                 }
                 else
                 {
@@ -105,21 +105,21 @@ namespace Calculator
             Console.ReadLine();
         }
 
-        private static bool ValidOperatorCheck(string hold)
+        private static bool ValidOperatorCheck(char hold)
         {
-            if (hold.IndexOf("+") > -1)
+            if (hold.Equals('+'))
             {
                 return true;
             }
-            if (hold.IndexOf("-") > -1)
+            if (hold.Equals('-'))
             {
                 return true;
             }
-            if (hold.IndexOf("*") > -1)
+            if (hold.Equals('*'))
             {
                 return true;
             }
-            if (hold.IndexOf("/") > -1)
+            if (hold.Equals('/'))
             {
                 return true;
             }
