@@ -16,32 +16,40 @@ namespace Calculator
 
         public static void Main(string[] args)
         {
-            try
-            {
                 GetFirstNumber();
                 GetOperation();
                 GetSecondNumber();
                 DoTheMath();
+        }
+
+        private static void GetFirstNumber()
+        {
+            try
+            {
+
+                Console.WriteLine("Please enter in your first number.");
+                string hold = Console.ReadLine();
+                int value;
+                if (int.TryParse(hold, out value))
+                {
+                    inputA = value;
+                }
+                else
+                {
+                    throw new NotImplementedException();
+                }
             }
             catch
             {
-                throw new NotImplementedException();
+                Console.WriteLine("Please enter only one integer right now.");
+                GetFirstNumber();
             }
-        }
-
-        private static void DoTheMath()
-        {
-            CalculatorLogic x = new CalculatorLogic();
-            x.Calc(inputA, inputB, operation);
-            Console.WriteLine("the answer is " + x.answer);
-            Console.ReadLine();
-        }
+        }       
 
         private static void GetSecondNumber()
         {
             try
             {
-
                 Console.WriteLine("Please enter in your second number.");
                 string hold = Console.ReadLine();
                 int value;
@@ -67,8 +75,8 @@ namespace Calculator
             {
                 Console.WriteLine("Please enter in your operation");
                 string hold = Console.ReadLine();
-                
-                if (ValidOperator(hold))
+
+                if (ValidOperatorCheck(hold))
                 {
                     operation = hold;
                 }
@@ -84,7 +92,15 @@ namespace Calculator
             }
         }
 
-        private static bool ValidOperator(string hold)
+        private static void DoTheMath()
+        {
+            CalculatorLogic x = new CalculatorLogic();
+            x.Calc(inputA, inputB, operation);
+            Console.WriteLine("Your problem of {0} {1} {2} is {3}.", inputA, operation, inputB, x.answer);
+            Console.ReadLine();
+        }
+
+        private static bool ValidOperatorCheck(string hold)
         {
             if (hold.IndexOf("+") > -1)
             {
@@ -104,29 +120,6 @@ namespace Calculator
             }
             return false;
         }
-
-        private static void GetFirstNumber()
-        {
-            try
-            {
-                
-                Console.WriteLine("Please enter in your first number.");
-                string hold = Console.ReadLine();
-                int value;
-                if (int.TryParse(hold, out value))
-                {
-                    inputA = value;
-                }
-                else
-                {
-                    throw new NotImplementedException();
-                }
-            }
-            catch
-            {
-                Console.WriteLine("Please enter only one integer right now.");
-                GetFirstNumber();
-            }
-        }
+        
     }
 }
