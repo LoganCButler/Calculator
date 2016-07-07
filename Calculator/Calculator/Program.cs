@@ -66,13 +66,43 @@ namespace Calculator
             try
             {
                 Console.WriteLine("Please enter in your operation");
-                operation = Console.ReadLine();
+                string hold = Console.ReadLine();
+                
+                if (ValidOperator(hold))
+                {
+                    operation = hold;
+                }
+                else
+                {
+                    throw new NotImplementedException();
+                }
             }
             catch
             {
                 Console.WriteLine("Please enter only one of these operations: +  -  *  / ");
-                GetFirstNumber();
+                GetOperation();
             }
+        }
+
+        private static bool ValidOperator(string hold)
+        {
+            if (hold.IndexOf("+") > -1)
+            {
+                return true;
+            }
+            if (hold.IndexOf("-") > -1)
+            {
+                return true;
+            }
+            if (hold.IndexOf("*") > -1)
+            {
+                return true;
+            }
+            if (hold.IndexOf("/") > -1)
+            {
+                return true;
+            }
+            return false;
         }
 
         private static void GetFirstNumber()
