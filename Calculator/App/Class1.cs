@@ -21,6 +21,12 @@ namespace App
                 case "-":
                     answer = a - b;
                     break;
+                case "*":
+                    answer = a * b;
+                    break;
+                case "/":
+                    answer = a / b;
+                    break;
             }
 
             
