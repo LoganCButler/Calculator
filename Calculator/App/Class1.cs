@@ -11,9 +11,19 @@ namespace App
         
         public int answer { get; set; }
 
-        public void CalcAdd(int a, int b)
+        public void Calc(int a, int b, string operation)
         {
-            answer = a + b; 
+            switch (operation)
+            {
+                case "+":
+                    answer = a + b;
+                    break;
+                case "-":
+                    answer = a - b;
+                    break;
+            }
+
+            
         }
     }
 }
