@@ -11,42 +11,45 @@ namespace UnitTest
         public void addingIntegers()
         {
             //Arrange 
-            int inputA = 1;
-            int inputB = 2;
-            string operation = "+";
-            //Act
             CalculatorLogic c = new CalculatorLogic();
-            c.Calc(inputA, inputB, operation);
+            //Act
+            c.numberList.Add(3);
+            c.operationList.Add('+');
+            c.numberList.Add(2);
+            c.operationList.Add('=');
+            c.DoTheMath();
             //Assert
-            Assert.AreEqual(3, c.answer);
+            Assert.AreEqual(5, c.lastAnswer);
         }
 
         [TestMethod]
         public void subtractingIntegers()
         {
             //Arrange 
-            int inputA = 5;
-            int inputB = 1;
-            string operation = "-";
-            //Act
             CalculatorLogic c = new CalculatorLogic();
-            c.Calc(inputA, inputB, operation);
+            //Act
+            c.numberList.Add(3);
+            c.operationList.Add('-');
+            c.numberList.Add(2);
+            c.operationList.Add('=');
+            c.DoTheMath();
             //Assert
-            Assert.AreEqual(4, c.answer);
+            Assert.AreEqual(1, c.lastAnswer);
         }
 
         [TestMethod]
         public void multiplyingIntegers()
         {
             //Arrange 
-            int inputA = 5;
-            int inputB = 2;
-            string operation = "*";
-            //Act
             CalculatorLogic c = new CalculatorLogic();
-            c.Calc(inputA, inputB, operation);
+            //Act
+            c.numberList.Add(8);
+            c.operationList.Add('*');
+            c.numberList.Add(2);
+            c.operationList.Add('=');
+            c.DoTheMath();
             //Assert
-            Assert.AreEqual(10, c.answer);
+            Assert.AreEqual(16, c.lastAnswer);
         }
 
         [TestMethod]
@@ -58,9 +61,9 @@ namespace UnitTest
             string operation = "/";
             //Act
             CalculatorLogic c = new CalculatorLogic();
-            c.Calc(inputA, inputB, operation);
+            //c.Calc(inputA, inputB, operation);
             //Assert
-            Assert.AreEqual(5, c.answer);
+            //Assert.AreEqual(5, c.answer);
         }
 
         [TestMethod]
@@ -72,9 +75,9 @@ namespace UnitTest
             string operation = "/";
             //Act
             CalculatorLogic c = new CalculatorLogic();
-            c.Calc(inputA, inputB, operation);
+            //c.Calc(inputA, inputB, operation);
             //Assert
-            Assert.AreEqual(6.5, c.answer);
+            //Assert.AreEqual(6.5, c.answer);
         }
 
         [TestMethod]
@@ -86,9 +89,9 @@ namespace UnitTest
             string operation = "/";
             //Act
             CalculatorLogic c = new CalculatorLogic();
-            c.Calc(inputA, inputB, operation);
+            //c.Calc(inputA, inputB, operation);
             //Assert
-            Assert.AreEqual(5, c.answer);
+            //Assert.AreEqual(5, c.answer);
         }
 
         [TestMethod]
@@ -100,10 +103,12 @@ namespace UnitTest
             string operation = "*";
             //Act
             CalculatorLogic c = new CalculatorLogic();
-            c.Calc(inputA, inputB, operation);
+            //c.Calc(inputA, inputB, operation);
             //Assert
-            Assert.AreEqual(2.5, c.answer);
+            //Assert.AreEqual(2.5, c.answer);
         }
+
+        
 
     }
 }
